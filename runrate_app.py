@@ -39,5 +39,7 @@ if uploaded_file:
                 max_tokens=500
             )
 
-            insight = response.choices[0]()
+           insight = response.choices[0].message.content
 
+	st.subheader("💬 AI Insight")
+    	st.markdown(insight)
