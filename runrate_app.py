@@ -30,16 +30,16 @@ if uploaded_file:
         }
     ]
 
-    if st.button("💡 Generate AI Insight"):
-        with st.spinner("Analyzing with GPT..."):
-            response = client.chat.completions.create(
-                model="gpt-3.5-turbo",
-                messages=messages,
-                temperature=0.3,
-                max_tokens=500
-            )
+if st.button("💡 Generate AI Insight"):
+    with st.spinner("Analyzing with GPT..."):
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=messages,
+            temperature=0.3,
+            max_tokens=500
+        )
 
-           insight = response.choices[0].message.content
+        insight = response.choices[0].message.content
 
-	st.subheader("💬 AI Insight")
-    	st.markdown(insight)
+    st.subheader("💬 AI Insight")
+    st.markdown(insight)
